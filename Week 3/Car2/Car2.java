@@ -37,11 +37,11 @@ public class Car2
         int rotationInDegrees  = carImage.getRotation();
         
         // Convert the current rotation from degrees to radians
-        double rotationInRadians = 0.0;
+        double rotationInRadians = (rotationInDegrees * Math.PI) / 180;
         
         // Calculate the distance to move in both x and y directions
-        double distX = dist;
-        double distY = 0.0;
+        double distX = dist * Math.cos(rotationInRadians);
+        double distY = dist * Math.sin(rotationInRadians);
         
         // Move the car in both x and y directions with the correct distances
         // Notice that setX() and setY() take int as argument
